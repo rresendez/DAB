@@ -47,7 +47,7 @@ def main(argv):
 
 
 
-	conn = poloniex('key goes here','key goes here')
+	conn = poloniex('QNJX0IAV-XPVQQNBK-3WLERMOA-HNVY4PVL','35562d33daecb1e2d50dc662abaa42ae2edf4cf9b86b9ca93e00f2ab124657394fb96f7b8a8c0c2f46ca958314bb5d24a3ed4044cab227e4f9f2fa6c89f76316')
 
 	output = open("output.html",'w')
 	output.truncate()
@@ -77,7 +77,7 @@ def main(argv):
 		if ( (len(dataPoints) > 2) and (dataPoints[-2]['price'] > dataPoints[-1]['price']) and (dataPoints[-2]['price'] > dataPoints[-3]['price']) ):
 			dataPoints[-2]['label'] = "'MAX'"
 			dataPoints[-2]['desc'] = "'This is a local maximum'"
-			
+
 			numberOfSimilarLocalMaxes = 0
 			for oldMax in localMax:
 				if ( (float(oldMax) > (float(dataPoints[-2]['price']) - .0001) ) and (float(oldMax) < (float(dataPoints[-2]['price']) + .0001) ) ):
